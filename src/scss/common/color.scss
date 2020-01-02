@@ -1,0 +1,58 @@
+$base_colors: (
+        'red': #DD2222,
+        'green': #22DD22,
+        'pink': #E91E63,
+        'purple': #9C27B0,
+        'cyan': #00BCD4,
+        'blue': #2298FE,
+        'indigo': #4422DD,
+        'yellow': #FFEF44,
+        'orange': #FE9800,
+        'blue-grey': #607D8B,
+        'grey': #9E9E9E,
+        'black': #000000,
+        'white': #FFFFFF,
+) !default;
+
+// 末尾に何もつかない色
+@each $kind, $color in $base_colors {
+  .text--#{$kind} {
+    color: $color;
+  }
+
+  .bg--#{$kind} {
+    background-color: $color;
+  }
+}
+
+// 透明度が変化した色
+@each $kind, $color in $base_colors {
+  @for $i from 1 through 5 {
+    $lighten: #{$kind}-lighten#{$i} !default;
+    $darken: #{$kind}-darken#{$i} !default;
+
+    .text--#{$lighten} {
+      color: lighten($color, $i * 5);
+    }
+
+    .text--#{$darken} {
+      color: darken($color, $i * 5);
+    }
+
+    .bg--#{$lighten} {
+      color: lighten($color, $i * 5);
+    }
+
+    .bg--#{$darken} {
+      background-color: darken($color, $i*5);
+    }
+  }
+}
+
+.text--transparent {
+  color: transparent;
+}
+
+.bg--transparent {
+  background-color: transparent;
+}
