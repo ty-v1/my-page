@@ -1,1 +1,1 @@
-import '@/scss/base/reset.scss';
+import '@/scss/index.scss';
