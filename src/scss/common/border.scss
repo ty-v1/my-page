@@ -1,0 +1,38 @@
+@import "~@/scss/common/color.scss";
+
+$borders: solid, dashed, dotted !default;
+$widths: 1, 2, 4 !default;
+
+@each $border in $borders {
+  @each $kind, $color in $base_colors {
+    @each $width in $widths {
+      .border--#{$border}-#{$width}x-#{$kind} {
+        border: #{$width}px #{$border} $color;
+      }
+
+      .border--#{$border}-#{$width}x-#{$kind} {
+        border: #{$width}px #{$border} $color;
+      }
+    }
+  }
+}
+
+// 透明色あり
+@each $border in $borders {
+  @each $kind, $color in $base_colors {
+    @each $width in $widths {
+      @for $i from 1 through 5 {
+        $lighten: #{$kind}-lighten#{$i} !default;
+        $darken: #{$kind}-darken#{$i} !default;
+
+        .border--#{$border}-#{$width}x-#{$lighten} {
+          border: #{$width}px #{$border} lighten($color, $i * 5);
+        }
+
+        .border--#{$border}-#{$width}x-#{$darken} {
+          border: #{$width}px #{$border} darken($color, $i * 5);
+        }
+      }
+    }
+  }
+}
