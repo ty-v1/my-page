@@ -37,11 +37,11 @@ $base_colors: (
     }
 
     .bg--#{$kind}-lighten#{$i} {
-      color: lighten($color, $i * 5);
+      background-color: lighten($color, $i * 5);
     }
 
     .bg--#{$kind}-darken#{$i} {
-      background-color: darken($color, $i*5);
+      background-color: darken($color, $i * 5);
     }
   }
 }
