@@ -28,22 +28,19 @@ $base_colors: (
 // 透明度が変化した色
 @each $kind, $color in $base_colors {
   @for $i from 1 through 5 {
-    $lighten: #{$kind}-lighten#{$i} !default;
-    $darken: #{$kind}-darken#{$i} !default;
-
-    .text--#{$lighten} {
+    .text--#{$kind}-lighten#{$i} {
       color: lighten($color, $i * 5);
     }
 
-    .text--#{$darken} {
+    .text--#{$kind}-darken#{$i} {
       color: darken($color, $i * 5);
     }
 
-    .bg--#{$lighten} {
+    .bg--#{$kind}-lighten#{$i} {
       color: lighten($color, $i * 5);
     }
 
-    .bg--#{$darken} {
+    .bg--#{$kind}-darken#{$i} {
       background-color: darken($color, $i*5);
     }
   }
