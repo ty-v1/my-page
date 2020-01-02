@@ -65,17 +65,19 @@ gulp.task('webpack', () => {
 });
 
 // ファイルを監視
-gulp.task('serve', gulp.series('clean', 'browserSync:init',
+gulp.task('serve', gulp.series('clean',
+    'browserSync:init',
     (cb) => setMode('development', cb),
-    gulp.parallel('webpack', 'ejs'), () => {
-        gulp.watch([
-                'src/**/*.ts',
+    'ejs',
+    'webpack',
+    () => {
+        gulp.watch(['src/**/*.ejs'], gulp.series('ejs', 'browserSync:reload'));
+        gulp.watch(['src/**/*.ts',
                 'src/**/*.js',
                 'src/**/*.scss',
                 'src/**/*.css'],
             gulp.series('webpack', 'browserSync:reload'));
-        gulp.watch(['src/**/*.ejs'], gulp.series('ejs', 'browserSync:reload'));
-    }
+    },
 ));
 
 // ビルド

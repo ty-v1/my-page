@@ -2,7 +2,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    watch: true,
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'src')
