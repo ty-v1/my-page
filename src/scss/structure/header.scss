@@ -1,6 +1,7 @@
 @import "~@/scss/common/color.scss";
+@import "~@/scss/mixin/break_point.scss";
 
-$_header_height: 64px !default;
+$header_height: 64px !default;
 $_menu_width: 140px !default;
 
 .st-header {
@@ -14,7 +15,7 @@ $_menu_width: 140px !default;
     justify-content: space-around;
     align-items: center;
 
-    height: $_header_height;
+    height: $header_height;
     padding: 0 8px;
   }
 
@@ -37,7 +38,7 @@ $_menu_width: 140px !default;
       display: flex;
       align-items: center;
       width: $_menu_width;
-      height: $_header_height;
+      height: $header_height;
       padding: 0 8px;
       transition: all 800ms 0s ease;
     }
@@ -87,5 +88,156 @@ $_menu_width: 140px !default;
 
   .st-header__menu__text:after {
     opacity: 1;
+  }
+}
+
+// 携帯時の設定
+@include lessThan(sm) {
+
+  .st-header__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    background: rgba(lighten(#000000, 10), 0.8);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+    padding: 150px 0;
+
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    animation: fade-out 800ms ease-in 0s;
+    transition: none;
+
+    &__item {
+      visibility: hidden;
+      opacity: 0;
+
+      width: 100%;
+      height: auto;
+      padding: 0;
+      pointer-events: auto;
+
+      transition: none;
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          $duration: (3 - $i) * 200ms + 200ms !default;
+          animation: slide-out #{$duration} ease-in 0s;
+        }
+      }
+    }
+
+    &.open {
+      visibility: visible;
+      opacity: 1;
+      animation: fade-in 200ms ease-out 0s;
+
+      .st-header__menu__item {
+        visibility: visible;
+        opacity: 1;
+
+        @for $i from 1 through 3 {
+          &:nth-child(#{$i}) {
+            $duration: $i * 200ms + 200ms !default;
+            animation: slide-in #{$duration} ease-out 0s;
+          }
+        }
+      }
+
+      .st-header__menu__text {
+        display: block;
+        width: 100%;
+        position: relative;
+        text-decoration: none;
+        line-height: 64px;
+
+        &_en {
+          width: 100%;
+          text-align: center;
+          font-size: 18px;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .st-header__menu__text {
+    &_jp, &:after {
+      display: none;
+    }
+  }
+
+  // アニメーション
+  @keyframes fade-in {
+    0% {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    1% {
+      visibility: visible;
+      opacity: 0;
+    }
+
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    1% {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    100% {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+      transform: translateX(200px);
+    }
+
+    1% {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-out {
+    0% {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    100% {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(200px);
+    }
   }
 }
