@@ -37,7 +37,9 @@ module.exports = {
                     loader: 'file-loader',
                     options: {
                         name: '[path][name].[ext]',
-                    }
+                        context: 'src/scss/image',
+                        outputPath : 'image',
+                    },
                 },
             },
         ]
