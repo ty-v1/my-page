@@ -1,6 +1,7 @@
 @import "~@/scss/common/color.scss";
 @import "~@/scss/mixin/break_point.scss";
 @import "~@/scss/structure/header/variables.scss";
+@import "~@/scss/structure/header/logo.scss";
 @import "~@/scss/structure/header/menu.scss";
 @import "~@/scss/structure/header/hamburger_menu.scss";
 
@@ -10,16 +11,10 @@
 
   &__inner {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
     height: $header_height;
     padding: 0 8px;
-  }
-
-  &__logo {
-    font-size: 24px;
-    margin-right: auto;
-    cursor: pointer;
   }
 }
