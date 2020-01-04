@@ -1,94 +1,66 @@
 @import "~@/scss/common/color.scss";
 @import "~@/scss/mixin/break_point.scss";
+@import "~@/scss/structure/header/variables.scss";
 
-$header_height: 64px !default;
 $_menu_width: 140px !default;
 
-.st-header {
-  background: lighten($blue, 5);
-  border-bottom: 1px solid lighten($grey, 25);
+.st-header-menu {
+  display: flex;
+  justify-content: space-around;
+  color: $white;
+  transition: none;
 
-  &__content {
-  }
-
-  &__inner {
+  &__item {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-
+    width: $_menu_width;
     height: $header_height;
     padding: 0 8px;
   }
 
-  &__logo {
-    font-size: 24px;
-    margin-right: auto;
-    cursor: pointer;
-  }
+  &__text {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    color: $white;
 
-  // メニュー
-  &__nav {
-  }
+    &_en {
+      display: block;
+      text-align: center;
+      font-size: 18px;
+      padding: 8px 0;
+    }
 
-  // 各リンク
-  &__menu {
-    display: flex;
-    justify-content: space-around;
+    &_jp {
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      transition: opacity 450ms ease, transform 450ms ease;
+    }
 
-    &__item {
-      display: flex;
-      align-items: center;
-      width: $_menu_width;
-      height: $header_height;
-      padding: 0 8px;
-      transition: all 800ms 0s ease;
+    &:after {
+      content: '';
+      display: block;
+      opacity: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: lighten($red, 10);
+      transform: translate((($_menu_width - 16px) / 2) - (8px / 2), -10px);
+      transition: opacity 450ms ease, transform 450ms ease;
     }
   }
 }
 
-.st-header__menu__text {
-  display: block;
-  width: 100%;
-  text-align: center;
-  position: relative;
-  text-decoration: none;
-  color: $white;
-
-  &_en {
-    display: block;
-    text-align: center;
-    font-size: 18px;
-    padding: 8px 0;
-  }
-
-  &_jp {
-    display: block;
-    text-align: center;
-    font-size: 12px;
-    transition: opacity 450ms ease, transform 450ms ease;
-  }
-
-  &:after {
-    content: '';
-    display: block;
-    opacity: 0;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: lighten($red, 10);
-    transform: translate((($_menu_width - 16px) / 2) - (8px / 2), -10px);
-    transition: opacity 450ms ease, transform 450ms ease;
-  }
-}
-
 // マウスオーバー時のアニメーション
-.st-header__menu__item:hover, .st-header__menu-current {
-  .st-header__menu__text_jp {
+.st-header-menu__item:hover {
+  .st-header-menu__text_jp {
     transform: translate(0, 10px);
     opacity: 0;
   }
 
-  .st-header__menu__text:after {
+  .st-header-menu__text:after {
     opacity: 1;
   }
 }
@@ -96,7 +68,7 @@ $_menu_width: 140px !default;
 // 携帯時の設定
 @include lessThan(sm) {
 
-  .st-header__menu {
+  .st-header-menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -117,7 +89,7 @@ $_menu_width: 140px !default;
     opacity: 0;
     pointer-events: none;
 
-    transition: visibility 800ms, opacity 800ms ease-in;
+    animation: st-header-menu_fade-out 800ms ease-in;
 
     &__item {
       opacity: 0;
@@ -140,8 +112,11 @@ $_menu_width: 140px !default;
       visibility: visible;
       opacity: 1;
 
-      .st-header__menu__item {
+      animation: st-header-menu_fade-in 200ms ease-in;
+
+      .st-header-menu__item {
         opacity: 1;
+        transition: none;
         transform: none;
 
         @for $i from 1 through 3 {
@@ -152,7 +127,7 @@ $_menu_width: 140px !default;
         }
       }
 
-      .st-header__menu__text {
+      .st-header-menu__text {
         display: block;
         width: 100%;
         position: relative;
@@ -169,9 +144,37 @@ $_menu_width: 140px !default;
     }
   }
 
-  .st-header__menu__text {
+  .st-header-menu__text {
     &_jp, &:after {
       display: none;
     }
+  }
+}
+
+// アニメーション
+@keyframes st-header-menu_fade-in {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  1% {
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes st-header-menu_fade-out {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
   }
 }
