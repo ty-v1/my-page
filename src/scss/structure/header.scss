@@ -115,23 +115,21 @@ $_menu_width: 140px !default;
     opacity: 0;
     pointer-events: none;
 
-    animation: fade-out 800ms ease-in 0s;
-    transition: none;
+    transition: visibility 800ms, opacity 800ms ease-in;
 
     &__item {
-      visibility: hidden;
       opacity: 0;
-
       width: 100%;
       height: auto;
       padding: 0;
       pointer-events: auto;
+      transform: translateX(200px);
 
-      transition: none;
       @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
           $duration: (3 - $i) * 200ms + 200ms !default;
-          animation: slide-out #{$duration} ease-in 0s;
+          transition: transform #{$duration} ease-in,
+          opacity #{$duration} ease-out;
         }
       }
     }
@@ -139,16 +137,15 @@ $_menu_width: 140px !default;
     &.open {
       visibility: visible;
       opacity: 1;
-      animation: fade-in 200ms ease-out 0s;
 
       .st-header__menu__item {
-        visibility: visible;
         opacity: 1;
+        transform: none;
 
         @for $i from 1 through 3 {
           &:nth-child(#{$i}) {
             $duration: $i * 200ms + 200ms !default;
-            animation: slide-in #{$duration} ease-out 0s;
+            transition: transform #{$duration} ease-out;
           }
         }
       }
@@ -173,71 +170,6 @@ $_menu_width: 140px !default;
   .st-header__menu__text {
     &_jp, &:after {
       display: none;
-    }
-  }
-
-  // アニメーション
-  @keyframes fade-in {
-    0% {
-      visibility: hidden;
-      opacity: 0;
-    }
-
-    1% {
-      visibility: visible;
-      opacity: 0;
-    }
-
-    100% {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  @keyframes fade-out {
-    0% {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    1% {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    100% {
-      visibility: hidden;
-      opacity: 0;
-    }
-  }
-
-  @keyframes slide-in {
-    0% {
-      opacity: 0;
-      transform: translateX(200px);
-    }
-
-    1% {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    100% {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  @keyframes slide-out {
-    0% {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    100% {
-      opacity: 0;
-      visibility: hidden;
-      transform: translateX(200px);
     }
   }
 }
