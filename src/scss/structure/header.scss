@@ -5,7 +5,8 @@ $header_height: 64px !default;
 $_menu_width: 140px !default;
 
 .st-header {
-  border-bottom: 1px solid lighten(map-get($base_colors, 'grey'), 25);
+  background: lighten($blue, 5);
+  border-bottom: 1px solid lighten($grey, 25);
 
   &__content {
   }
@@ -51,6 +52,7 @@ $_menu_width: 140px !default;
   text-align: center;
   position: relative;
   text-decoration: none;
+  color: $white;
 
   &_en {
     display: block;
@@ -73,7 +75,7 @@ $_menu_width: 140px !default;
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: lighten(map-get($base_colors, 'red'), 10);
+    background: lighten($red, 10);
     transform: translate((($_menu_width - 16px) / 2) - (8px / 2), -10px);
     transition: opacity 450ms ease, transform 450ms ease;
   }
@@ -100,7 +102,7 @@ $_menu_width: 140px !default;
     left: 0;
     z-index: 100;
 
-    background: rgba(lighten(#000000, 10), 0.8);
+    background: rgba(lighten($black, 10), 0.8);
 
     display: flex;
     flex-wrap: wrap;
