@@ -1,0 +1,180 @@
+@import "~@/scss/common/color.scss";
+@import "~@/scss/mixin/break_point.scss";
+@import "~@/scss/structure/header/variables.scss";
+
+$_menu_width: 140px !default;
+
+.st-header-menu {
+  display: flex;
+  justify-content: space-around;
+  color: $white;
+  transition: none;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    width: $_menu_width;
+    height: $header_height;
+    padding: 0 8px;
+  }
+
+  &__text {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    color: $white;
+
+    &_en {
+      display: block;
+      text-align: center;
+      font-size: 18px;
+      padding: 8px 0;
+    }
+
+    &_jp {
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      transition: opacity 450ms ease, transform 450ms ease;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      opacity: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: lighten($red, 10);
+      transform: translate((($_menu_width - 16px) / 2) - (8px / 2), -10px);
+      transition: opacity 450ms ease, transform 450ms ease;
+    }
+  }
+}
+
+// マウスオーバー時のアニメーション
+.st-header-menu__item:hover {
+  .st-header-menu__text_jp {
+    transform: translate(0, 10px);
+    opacity: 0;
+  }
+
+  .st-header-menu__text:after {
+    opacity: 1;
+  }
+}
+
+// 携帯時の設定
+@include lessThan(sm) {
+
+  .st-header-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    background: rgba(lighten($black, 10), 0.8);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+    padding: 150px 0;
+
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    animation: st-header-menu_fade-out 800ms ease-in;
+
+    &__item {
+      opacity: 0;
+      width: 100%;
+      height: auto;
+      padding: 0;
+      pointer-events: auto;
+      transform: translateX(200px);
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          $duration: (3 - $i) * 200ms + 200ms !default;
+          transition: transform #{$duration} ease-in,
+          opacity #{$duration} ease-out;
+        }
+      }
+    }
+
+    &.open {
+      visibility: visible;
+      opacity: 1;
+
+      animation: st-header-menu_fade-in 200ms ease-in;
+
+      .st-header-menu__item {
+        opacity: 1;
+        transition: none;
+        transform: none;
+
+        @for $i from 1 through 3 {
+          &:nth-child(#{$i}) {
+            $duration: $i * 200ms + 200ms !default;
+            transition: transform #{$duration} ease-out;
+          }
+        }
+      }
+
+      .st-header-menu__text {
+        display: block;
+        width: 100%;
+        position: relative;
+        text-decoration: none;
+        line-height: 64px;
+
+        &_en {
+          width: 100%;
+          text-align: center;
+          font-size: 18px;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .st-header-menu__text {
+    &_jp, &:after {
+      display: none;
+    }
+  }
+}
+
+// アニメーション
+@keyframes st-header-menu_fade-in {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  1% {
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes st-header-menu_fade-out {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

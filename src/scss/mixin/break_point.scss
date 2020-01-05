@@ -7,7 +7,7 @@ $_break_points: (
 
 // 指定したサイズ以下のメディクエリを生成する
 @mixin lessThan($break_point) {
-  @media (max-width: #{map-get($_break_points, $break_point)}) {
+  @media screen and (max-width: #{map-get($_break_points, $break_point)}) {
     @content;
   }
 }
