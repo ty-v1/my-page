@@ -1,0 +1,20 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid_no-gutters > [class*=grid__col] {
+  margin: 0;
+}
+
+//
+.grid_no-wrap {
+  flex-wrap: nowrap;
+}
+
+.grid_revert-wrap {
+  flex-wrap: revert;
+}
+
+//
+
