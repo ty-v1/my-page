@@ -1,0 +1,35 @@
+@import "~@/scss/mixin/break_point.scss";
+
+// 垂直方向の整列
+$_aligns: center, start, end, stretch, baseline !default;
+$_align_contents: center, start, end, stretch,
+space-around, space-between, space-evenly, !default;
+
+@each $align in $_aligns {
+  .grid_align-#{$align} {
+    align-items: $align !important;
+  }
+}
+
+@each $align_content in $_align_contents {
+  .grid_align-#{$align-content} {
+    align-content: $align-content !important;
+  }
+}
+
+// ブレークポイント有り
+@each $break_point in lg, md, sm, xs {
+  @include lessThan($break_point) {
+    @each $align in $_aligns {
+      .grid_align-#{$break_point}-#{$align} {
+        align-items: $align !important;
+      }
+    }
+
+    @each $align_content in $_align_contents {
+      .grid_align-#{$break_point}-#{$align_content} {
+        align-content: $align_content !important;
+      }
+    }
+  }
+}

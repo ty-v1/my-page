@@ -1,0 +1,32 @@
+@import "~@/scss/mixin/break_point.scss";
+
+.grid__spacer {
+  flex-grow: 1 !important;
+}
+
+// セルの大きさ
+$_base_basis: 1 / 12;
+// デフォルト
+@for $i from 1 through 12 {
+  $basis: $i * $_base_basis;
+
+  .grid__col-#{$i} {
+    flex: 0 0 #{percentage($basis)};
+    margin: 12px;
+  }
+}
+
+// ブレークポイント有り
+@each $break_point in lg, md, sm, xs {
+
+  @include lessThan($break_point) {
+    @for $i from 1 through 12 {
+      $basis: $i * $_base_basis;
+
+      .grid__col-#{$break_point}-#{$i} {
+        flex: 0 0 #{percentage($basis)};
+        margin: 12px;
+      }
+    }
+  }
+}
