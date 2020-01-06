@@ -8,7 +8,7 @@ $_menu_width: 140px !default;
   display: flex;
   justify-content: space-around;
   color: $white;
-  transition: none;
+  animation: st-header-menu_fade-out 0ms ease-in;
 
   &__item {
     display: flex;
@@ -91,6 +91,8 @@ $_menu_width: 140px !default;
 
     animation: st-header-menu_fade-out 800ms ease-in;
 
+    //;
+
     &__item {
       opacity: 0;
       width: 100%;
@@ -108,7 +110,7 @@ $_menu_width: 140px !default;
       }
     }
 
-    &.open {
+    &_open {
       visibility: visible;
       opacity: 1;
 
