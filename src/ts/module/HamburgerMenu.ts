@@ -7,7 +7,7 @@ export class HamburgerMenu implements Module {
     private static readonly ID = 'st-hamburger-menu';
     private static readonly MENU_ID = 'st-header__menu';
     private static readonly ACTIVE = 'active';
-    private static readonly MENU_OPEN = 'open';
+    private static readonly MENU_OPEN = 'st-header-menu_open';
 
     private readonly hamburger: HTMLElement;
     private readonly menu: HTMLElement;
