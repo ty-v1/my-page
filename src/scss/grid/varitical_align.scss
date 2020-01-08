@@ -21,13 +21,13 @@ space-around, space-between, space-evenly, !default;
 @each $break_point in lg, md, sm, xs {
   @include lessThan($break_point) {
     @each $align in $_aligns {
-      .grid_align-#{$break_point}-#{$align} {
+      .grid_align-#{$align}-#{$break_point} {
         align-items: $align !important;
       }
     }
 
     @each $align_content in $_align_contents {
-      .grid_align-#{$break_point}-#{$align_content} {
+      .grid_align-#{$align_content}-#{$break_point} {
         align-content: $align_content !important;
       }
     }

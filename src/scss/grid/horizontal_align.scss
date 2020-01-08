@@ -14,7 +14,7 @@ space-around, space-between, space-evenly !default;
 @each $break_point in lg, md, sm, xs {
   @include lessThan($break_point) {
     @each $justify_content in $_justify_contents {
-      .grid_justify-#{$justify_content} {
+      .grid_justify-#{$justify_content}-#{$break_point} {
         justify-content: $justify_content !important;
       }
     }
