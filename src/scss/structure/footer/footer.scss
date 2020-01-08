@@ -1,0 +1,14 @@
+@import "~@/scss/common/color.scss";
+@import "~@/scss/mixin/break_point.scss";
+@import "~@/scss/structure/footer/menu.scss";
+@import "~@/scss/structure/footer/copyright.scss";
+
+.st-footer {
+
+  &__content {
+    padding: 8px;
+    width: 100%;
+
+    background: lighten($blue, 5);
+  }
+}
