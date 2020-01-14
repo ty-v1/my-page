@@ -23,7 +23,7 @@ $_base_basis: 1 / 12;
     @for $i from 1 through 12 {
       $basis: $i * $_base_basis;
 
-      .grid__col-#{$break_point}-#{$i} {
+      .grid__col-#{$i}-#{$break_point} {
         flex: 0 0 #{percentage($basis)};
         margin: 12px;
       }

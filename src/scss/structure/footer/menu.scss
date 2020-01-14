@@ -1,0 +1,23 @@
+@import "~@/scss/common/color.scss";
+@import "~@/scss/mixin/break_point.scss";
+
+.st-footer-menu {
+
+  &__item {
+    &:before {
+      content: '>';
+      font-size: 1.2em;
+      color: $white;
+    }
+  }
+
+  &__text {
+    color: $white;
+    text-decoration: none;
+    transition: color 350ms ease-out;
+
+    &:hover {
+      color: lighten($pink, 10);
+    }
+  }
+}

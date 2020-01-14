@@ -1,0 +1,13 @@
+@import "~@/scss/common/color.scss";
+
+.st-footer__copyright {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  text-align: center;
+
+  color: $white;
+  background: darken($blue, 10);
+
+  font-size: smaller;
+}
