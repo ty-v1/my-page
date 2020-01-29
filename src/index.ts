@@ -1,4 +1,4 @@
-import '@/scss/index.scss';
+import '@/scss/main.scss';
 import {HamburgerMenu} from '@/ts/module/HamburgerMenu.ts';
 import {Module} from '@/ts/module/Module.ts';
 

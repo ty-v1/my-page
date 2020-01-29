@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "gulp build",
-    "dev": "gulp serve"
+    "build": "webpack",
+    "dev": "webpack-dev-server"
   },
   "author": "Yuya Tomida",
   "license": "ISC",
@@ -14,23 +14,18 @@
     "@babel/preset-env": "^7.7.7",
     "autoprefixer": "^9.7.3",
     "babel-loader": "^8.0.6",
-    "browser-sync": "^2.26.7",
     "core-js": "^3.6.1",
     "css-loader": "^3.4.0",
-    "ejs-render-loader": "^1.0.0",
+    "ejs-html-loader": "^4.0.1",
     "fibers": "^4.0.2",
     "file-loader": "^5.0.2",
-    "gulp": "^4.0.2",
-    "gulp-cli": "^2.2.0",
-    "gulp-ejs": "^5.0.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-rename": "^2.0.0",
+    "globule": "^1.3.0",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-env-file": "^0.1.8",
     "postcss-loader": "^3.0.0",
     "regenerator-runtime": "^0.13.3",
-    "rimraf": "^3.0.0",
     "sass": "^1.24.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.1.2",
@@ -38,7 +33,8 @@
     "typescript": "^3.7.4",
     "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10",
-    "webpack-stream": "^5.2.1"
+    "webpack-dev-server": "^3.10.1",
+    "webpack-fix-style-only-entries": "^0.4.0"
   },
   "dependencies": {}
 }
