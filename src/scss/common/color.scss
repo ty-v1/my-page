@@ -23,25 +23,25 @@ $white: #FFFFFF !default;
 
 // 配列
 $colors: (
-        red:$red,
-        pink:$pink,
-        purple: $purple,
+        'red':$red,
+        'pink':$pink,
+        'purple': $purple,
         //
-        cyan: $cyan,
-        blue: $blue,
-        indigo: $indigo,
+        'cyan': $cyan,
+        'blue': $blue,
+        'indigo': $indigo,
         //
-        yellow: $yellow,
-        orange: $orange,
-        lime: $lime,
+        'yellow': $yellow,
+        'orange': $orange,
+        'lime': $lime,
         //
-        light_green: $light_green,
-        green: $green,
-        teal: $teal,
+        'light_green': $light_green,
+        'green': $green,
+        'teal': $teal,
         //
-        blue_grey: $blue_grey,
-        grey: $grey,
+        'blue_grey': $blue_grey,
+        'grey': $grey,
         //
-        black: $black,
-        white: $white,
+        'black': $black,
+        'white': $white,
 );
