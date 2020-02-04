@@ -7,7 +7,7 @@ $_menu_width: 140px !default;
 .st-header-menu {
   display: flex;
   justify-content: space-around;
-  color: $white;
+  color: lighten($black, 20);
   animation: st-header-menu_fade-out 0ms ease-in;
 
   &__item {
@@ -23,7 +23,7 @@ $_menu_width: 140px !default;
     text-align: center;
     position: relative;
     text-decoration: none;
-    color: $white;
+    color: lighten($black, 20);
 
     &_en {
       display: block;

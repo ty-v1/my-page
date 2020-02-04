@@ -3,7 +3,7 @@
 .paper-list {
   list-style-type: upper-roman;
   padding-left: 1em;
-  color: darken($grey, 25);
+  color: lighten($grey, 35);
 
   &__item {
     margin-bottom: 8px;

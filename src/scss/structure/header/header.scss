@@ -7,7 +7,7 @@
 @import "~@/scss/structure/header/sns_link.scss";
 
 .st-header {
-  background: lighten($blue, 5);
+  background: lighten($grey, 30);
   border-bottom: 1px solid lighten($grey, 25);
 
   &__inner {

@@ -6,8 +6,8 @@
   padding: 8px 0;
   text-align: center;
 
-  color: $white;
-  background: darken($blue, 10);
+  color: lighten($black, 20);
+  background: lighten($grey, 20);
 
   font-size: smaller;
 }
