@@ -7,7 +7,126 @@
 <%- include('../templates/header.ejs') %>
 
 <main>
-    <p>index page</p>
+    <section class="main-section">
+        <p class="main-section__title">Profile</p>
+        <div class="main-section__content">
+            <div class="subsection">
+                <div class="subsection__content">
+                    <table class="bio">
+                        <thead>
+                        <tr class="bio__head">
+                            <td class="bio__date">日付・期間</td>
+                            <td class="bio__event">学歴・経歴</td>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr class="bio__row">
+                            <td class="bio__date">2015.4</td>
+                            <td class="bio__event">大阪大学基礎工学部情報科学科 入学</td>
+                        </tr>
+                        <tr class="bio__row">
+                            <td class="bio__date">2019.3</td>
+                            <td class="bio__event">大阪大学基礎工学部情報科学科 卒業</td>
+                        </tr>
+                        <tr class="bio__row">
+                            <td class="bio__date">2019.4</td>
+                            <td class="bio__event">大阪大学情報科学研究科 入学</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- 好きなもの -->
+            <div class="subsection">
+                <p class="subsection__title">好き</p>
+                <div class="subsection__content">
+                    <ul class="icon-list">
+                        <li class="icon-list__item bg-pink-lighten-3">
+                            <span class="iconify icon-2x text-grey-darken-5"
+                                  data-icon="mdi:language-typescript"
+                                  data-inline="false">
+                            </span>
+                        </li>
+                        <li class="icon-list__item bg-pink-lighten-3">
+                            <i class="fab fa-java fa-2x text-grey-darken-5"></i>
+                        </li>
+                        <li class="icon-list__item bg-pink-lighten-3">
+                            <i class="fab fa-sass fa-2x text-grey-darken-5"></i>
+                        </li>
+                        <li class="icon-list__item bg-pink-lighten-3">
+                            <span class="iconify icon-2x text-grey-darken-5"
+                                  data-icon="cib:intellijidea"
+                                  data-inline="false">
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 嫌いなもの -->
+            <div class="subsection">
+                <h3 class="subsection__title">嫌い</h3>
+                <div class="subsection__content">
+                    <ul class="icon-list">
+                        <li class="icon-list__item bg-indigo-lighten-4">
+                            <i class="fab fa-python fa-2x text-grey-darken-5"></i>
+                        </li>
+                        <li class="icon-list__item bg-indigo-lighten-4">
+                            <i class="fab fa-js fa-2x text-grey-darken-5"></i>
+                        </li>
+                        <li class="icon-list__item bg-indigo-lighten-4">
+                            <i class="fab fa-php fa-2x text-grey-darken-5"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- スキル -->
+            <div class="subsection">
+                <h3 class="subsection__title">スキル</h3>
+                <div class="subsection__content">
+                    <ul class="icon-list">
+                        <!-- 言語 -->
+                        <li class="icon-list__item bg-orange-lighten-3">
+                            <span class="iconify icon-2x text-grey-darken-5"
+                                  data-icon="mdi:language-typescript"
+                                  data-inline="false">
+                            </span>
+                        </li>
+                        <li class="icon-list__item bg-orange-lighten-3">
+                            <i class="fab fa-java fa-2x text-grey-darken-5"></i>
+                        </li>
+                        <li class="icon-list__item bg-orange-lighten-3">
+                            <i class="fab fa-php fa-2x text-grey-darken-5"></i>
+                        </li>
+                        <li class="icon-list__item bg-orange-lighten-3">
+                            <i class="fab fa-sass fa-2x text-grey-darken-5"></i>
+                        </li>
+                        <!-- フレームワーク -->
+                        <li class="icon-list__item bg-orange-lighten-3">
+                            <i class="fab fa-vuejs fa-2x text-grey-darken-5"></i>
+                        </li>
+                        <!-- その他 -->
+                        <li class="icon-list__item bg-orange-lighten-3">
+                            <span class="iconify icon-2x text-grey-darken-5"
+                                  data-icon="cib:webpack"
+                                  data-inline="false">
+                            </span>
+                        </li>
+                        <li class="icon-list__item bg-orange-lighten-3">
+                            <i class="fab fa-git-alt fa-2x text-grey-darken-5"></i>
+                        </li>
+                        <li class="icon-list__item bg-orange-lighten-3">
+                            <span class="iconify icon-2x text-grey-darken-5"
+                                  data-icon="cib:mysql"
+                                  data-inline="false">
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
 </main>
 
 <%- include('../templates/footer.ejs') %>

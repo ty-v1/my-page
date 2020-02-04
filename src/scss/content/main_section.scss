@@ -1,0 +1,12 @@
+@import "~@/scss/common/color.scss";
+
+.main-section {
+  padding: 16px;
+
+  &__title {
+    font-size: 3.6rem;
+    font-weight: 600;
+    color: lighten($blue, 5);
+    margin-bottom: 12px;
+  }
+}

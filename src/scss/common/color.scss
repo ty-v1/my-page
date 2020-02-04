@@ -15,8 +15,33 @@ $light_green: #8BC34A !default;
 $green: #4CAF50 !default;
 $teal: #009688 !default;
 //
-$blue-grey: #607D8B !default;
+$blue_grey: #607D8B !default;
 $grey: #9E9E9E !default;
 //
 $black: #000000 !default;
 $white: #FFFFFF !default;
+
+// 配列
+$colors: (
+        red:$red,
+        pink:$pink,
+        purple: $purple,
+        //
+        cyan: $cyan,
+        blue: $blue,
+        indigo: $indigo,
+        //
+        yellow: $yellow,
+        orange: $orange,
+        lime: $lime,
+        //
+        light_green: $light_green,
+        green: $green,
+        teal: $teal,
+        //
+        blue_grey: $blue_grey,
+        grey: $grey,
+        //
+        black: $black,
+        white: $white,
+);
