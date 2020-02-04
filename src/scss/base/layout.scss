@@ -1,3 +1,5 @@
+@import "~@/scss/common/color.scss";
+
 // 画面の最小の高さを設定
 body {
   min-height: 100vh;
@@ -7,4 +9,5 @@ body {
 
 main {
   flex: 1;
+  background: lighten($black, 20);
 }

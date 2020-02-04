@@ -7,12 +7,12 @@
     &:before {
       font-family: FontAwesome;
       content: '\f138';
-      color: $white;
+      color: lighten($black, 20);
     }
   }
 
   &__text {
-    color: $white;
+    color: lighten($black, 20);
     text-decoration: none;
     transition: color 350ms ease-out;
 
