@@ -1,0 +1,23 @@
+@import "~@/scss/common/color.scss";
+
+.paper-list {
+  list-style-type: upper-roman;
+  padding-left: 1em;
+  color: darken($grey, 25);
+
+  &__item {
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__conf {
+    text-decoration: underline;
+  }
+}
