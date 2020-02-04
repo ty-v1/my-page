@@ -1,0 +1,12 @@
+@import "~@/scss/common/color.scss";
+
+.st-header-sns {
+  &__link {
+    font-size: 20px;
+    color: $black;
+
+    &:hover {
+      color: #8BC34A;
+    }
+  }
+}
