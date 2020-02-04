@@ -1,0 +1,34 @@
+@import "~@/scss/common/color.scss";
+
+%snapshot {
+  content: '';
+  display: block;
+  padding-top: (9 / 16) * 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.product {
+  width: 100%;
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__snapshot {
+    &_macaw {
+      margin-bottom: 12px;
+
+      &:before {
+        @extend %snapshot;
+        background-image: url('~@/asset/macaw.png');
+      }
+    }
+  }
+
+  &__description {
+    color: darken($grey, 25);
+    margin-bottom: 12px;
+  }
+}
