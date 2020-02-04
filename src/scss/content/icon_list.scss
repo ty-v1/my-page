@@ -1,0 +1,25 @@
+@import "~@/scss/common/color.scss";
+
+// iconを並べるときに使う
+.icon-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+
+  &__item {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 24px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    width: 3.5em;
+    height: 3.5em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
