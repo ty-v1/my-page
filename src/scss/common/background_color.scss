@@ -1,0 +1,21 @@
+@import "~@/scss/common/color.scss";
+
+// normal
+@each $name, $code in $colors {
+  .bg-#{$name} {
+    background: $code !important;
+  }
+}
+
+// darken・lighten
+@for $i from 1 through 6 {
+  @each $name, $code in $colors {
+    .bg-#{$name}-darken-#{$i} {
+      background: darken($code, $i * 5) !important;
+    }
+
+    .bg-#{$name}-lighten-#{$i} {
+      background: lighten($code, $i * 5) !important;
+    }
+  }
+}
