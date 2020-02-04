@@ -5,8 +5,8 @@
 
   &__item {
     &:before {
-      content: '>';
-      font-size: 1.2em;
+      font-family: FontAwesome;
+      content: '\f138';
       color: $white;
     }
   }
