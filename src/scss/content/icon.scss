@@ -1,0 +1,18 @@
+// アイコンのサイズを定義
+.icon-xs {
+  font-size: 0.75em !important;
+}
+
+.icon-sm {
+  font-size: 0.875em !important;
+}
+
+.icon-lg {
+  font-size: 0.133em !important;
+}
+
+@for $size from 1 through 10 {
+  .icon-#{$size}x {
+    font-size: #{$size}em;
+  }
+}
