@@ -1,0 +1,14 @@
+@import "~@/scss/common/color.scss";
+
+.subsubsection {
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: lighten($blue, 5);
+    margin-bottom: 12px;
+  }
+
+  &__content {
+    margin-bottom: 16px;
+  }
+}
